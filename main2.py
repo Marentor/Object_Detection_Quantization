@@ -26,7 +26,7 @@ saved_model_dir='saved_model'
 #converter = tf.lite.TFLiteConverter.from_saved_model(saved_model_dir)
 converter = tf.lite.TFLiteConverter.from_keras_model(detector )
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
-converter.target_spec.supported_types = [tf.float32]
+converter.target_spec.supported_types = [tf.float16]
 tflite_quant_model = converter.convert()
 
 interpreter = tf.lite.Interpreter(model_content=tflite_quant_model)
