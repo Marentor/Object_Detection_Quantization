@@ -41,7 +41,7 @@ plt.show()
 plt.title('Inference times of float32 Quantization')
 plt.xlabel('Seconds')
     
-plt.hist(float32["inference_times"], 100)
+plt.hist(float32["inference_times"][1:], 100)
 
 
 plt.savefig('inf_times_float32.png')
